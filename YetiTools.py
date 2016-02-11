@@ -458,7 +458,7 @@ def FBX_Batch():
         fn = os.path.join(basedir, fbx, name)
         print(basedir)
             
-        bpy.ops.export_scene.fbx(filepath = fn + ".fbx", global_scale=1000, use_mesh_modifiers=True, mesh_smooth_type = 'OFF', use_selection=True, version='BIN7400')
+        bpy.ops.export_scene.fbx(filepath = fn + ".fbx", global_scale=1, use_mesh_modifiers=True, mesh_smooth_type = 'OFF', use_selection=True, version='BIN7400')
 
         obj.select = False
 
