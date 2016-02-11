@@ -2,7 +2,7 @@ bl_info = {
     "name": "YetiTools",
     "description": "Tools we use at yeTiVision studio..",
     "author": "Roman Chumak (p4ymak)",
-    "version": (0, 10, 9),
+    "version": (0, 10, 10),
     "blender": (2, 75, 0),
     "location": "View3D > Toolbar > YetiTools",
     "category": "Object",
@@ -429,6 +429,7 @@ def UDK_Camera():
     print("--------")
 
     st = 0
+    camera_current = bpy.context.object.name
     camera_endfr = bpy.data.scenes[Scene_Name].frame_end
     camera_startfr = 0 
     for marker in bpy.data.scenes['Scene'].timeline_markers:
@@ -442,7 +443,7 @@ def UDK_Camera():
                 camera_startfr = marker.frame
                 st =+ 1
 
-    dumcamname = "Cam_" + str(int(camera_startfr)) + "_" + str(camera_endfr)
+    dumcamname = camera_current + "_" + str(int(camera_startfr)) + "_" + str(camera_endfr)
     print("dumcamname")
     print(dumcamname)
     childo = bpy.context.object.name
