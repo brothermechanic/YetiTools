@@ -2,7 +2,7 @@ bl_info = {
     "name": "YetiTools",
     "description": "Tools we use at yeTiVision studio..",
     "author": "Roman Chumak (p4ymak)",
-    "version": (0, 10, 10),
+    "version": (0, 10, 11),
     "blender": (2, 75, 0),
     "location": "View3D > Toolbar > YetiTools",
     "category": "Object",
