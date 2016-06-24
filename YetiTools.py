@@ -2,8 +2,8 @@ bl_info = {
     "name": "YetiTools",
     "description": "Tools we use at yeTiVision studio..",
     "author": "Roman Chumak (p4ymak)",
-    "version": (0, 10, 11),
-    "blender": (2, 75, 0),
+    "version": (0, 10, 12),
+    "blender": (2, 77, 0),
     "location": "View3D > Toolbar > YetiTools",
     "category": "Object",
     'wiki_url': '',
@@ -458,7 +458,7 @@ def FBX_Batch():
         fn = os.path.join(basedir, fbx, name)
         print(basedir)
             
-        bpy.ops.export_scene.fbx(filepath = fn + ".fbx", global_scale=1, use_mesh_modifiers=True, use_selection=True, version='BIN7400', bake_anim=True, bake_anim_use_all_bones=True, bake_anim_force_startend_keying=True, bake_anim_simplify_factor=0, bake_anim_use_nla_strips=False, bake_anim_use_all_actions=False )
+        bpy.ops.export_scene.fbx(filepath = fn + ".fbx", global_scale=1, use_mesh_modifiers=True, use_selection=True, version='BIN7400', object_types='Mesh', bake_anim=False )
 
         obj.select = False
 
@@ -473,7 +473,7 @@ def FBX_Batch():
 class FBXBatchOperator(bpy.types.Operator):
     """Batch Export selected objects to FBX files.."""
     bl_idname = "object.fbxbatch"
-    bl_label = "Export to FBX"
+    bl_label = "Export static FBX"
     bl_options = {"UNDO"}
     def invoke(self, context, event):
         FBX_Batch()
